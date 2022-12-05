@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Set up a reminder{% endblock %}
+
+{% block content %}
+<div class = "container">
+    
+    {% if error_statement  %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ error_statement }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    {% endif %}
+
+
+    <h1>Set up a reminder!</h1>
+    <br/><br>
+
+    <form action= "/reminderForm" method="POST">
+
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+            placeholder = "Remind me to..." name='message' value = "{{ message }}">
+          </div>
+
+          <div class="mb-3">
+            <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder = "Phone Number" name='phone' value = "{{ phone }}">
+          </div>
+          
+          <div class="mb-3">
+            <label for="reminderTime">Enter a date and time for your reminder:</label>
+            <input id="reminderTime" type="datetime-local" name="timeToRemind" value = "{{ timeToRemind }}">
+          </div>
+        
+          <br/>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+
+
+
+
+</div>
+{% endblock %}

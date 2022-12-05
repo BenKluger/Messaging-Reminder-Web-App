@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Thank you!{% endblock %}
+
+{% block content %}
+<div class = "container">
+    <h1>Thank you for setting a reminder!</h1>
+    <br/><br/>
+
+    <ul>
+    {% for reminder in reminders %}
+        <li>{{ reminder }}</li>
+    {% endfor %}
+    </ul>    
+</div>
+{% endblock %}

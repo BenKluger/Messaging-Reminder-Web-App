@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}About Ben Kluger{% endblock %}
+
+{% block content %}
+<div class = "container">
+    <h1>About me</h1>
+    <br><br>
+    <!-- <img src="static/images/profilePic.jpg" width="300", alt="Profile picture of Ben Kluger"> -->
+    <img src="{{ url_for('static', filename='images/profilePic.jpg') }}" width="300", alt="Profile picture of Ben Kluger">
+
+    <!-- <ul>
+    <p>{{ names.0, names.1 }}</p>
+    <p>
+        {% for name in names %}
+            {% if name == "Ben"%}
+                <li>Ben!</li>
+            {% else %}
+                <li>{{ name }}</li>
+            {% endif %}
+        {% endfor %}
+    </p>
+    </ul> -->
+</div>
+{% endblock %}
+
+    
